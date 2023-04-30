@@ -84,6 +84,10 @@ body a{
     margin: 0 auto;
 }
 
+.div .sidebar li{
+    margin-top: 100%;
+}
+
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
