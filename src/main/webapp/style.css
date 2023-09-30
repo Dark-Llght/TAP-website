@@ -87,11 +87,15 @@ body a{
   -webkit-filter: invert(100%);
     filter: invert(100%);
   margin: 10%;
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
 }
 .main h1{
   font-size: 40px;
   font-family: 'Courier New', Courier, monospace;
+}
+.info{
+  background-color: #a1eba0;
 }
 form {
     display: flex;
