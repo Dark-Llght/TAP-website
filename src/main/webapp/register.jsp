@@ -26,6 +26,7 @@
               <input type="password" id="pass" name="password" required>
               <input type="submit" value="submit">
             </form>
+            <a class="underlineHover" href="login.jsp" style="color: #202020;">Already have an account? Login</a>
 		</div>
      </div>
 </body>

@@ -22,14 +22,19 @@ public class LoginServlet extends HttpServlet {
 			ps.setString(1, ema);
 			ps.setString(2, pas);
 			ResultSet rs = ps.executeQuery();
-			if(rs.next()) {
-				RequestDispatcher rd = request.getRequestDispatcher("download.html");
-				rd.forward(request, response);
+			if (rs.next()) {
+			    if (ema != null && ema.equals("lcfilho19@gmail.com") && pas != null && pas.equals("2334")) {
+			        RequestDispatcher rd = request.getRequestDispatcher("adminPage.jsp");
+			        rd.forward(request, response);
+			    } else {
+			        RequestDispatcher rd = request.getRequestDispatcher("download.html");
+			        rd.forward(request, response);
+			    }
+			} else {
+			    RequestDispatcher rd = request.getRequestDispatcher("loginErr.jsp");
+			    rd.forward(request, response);
 			}
-			else {
-				RequestDispatcher rd = request.getRequestDispatcher("loginErr.jsp");
-				rd.forward(request, response);
-			}
+
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {

@@ -24,7 +24,6 @@
               <input type="password" id="pass" name="password" required>
               <input type="submit" value="submit">
             </form>
-            <a class="underlineHover" href="register.jsp" style="color: #202020;">Not Registered Yet?</a>
 		</div>
      </div>
 </body>
