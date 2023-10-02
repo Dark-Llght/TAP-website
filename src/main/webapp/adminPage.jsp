@@ -7,9 +7,12 @@
     <title>Admin Page</title>
 </head>
 <body>
-    <h1>Admin Page</h1>
+    <h1>Admin Page</h1> <form action="registerAdm.jsp">
+    <input type="submit" value="Add User" />
+</form>
     <table>
         <tr>
+        	<th>ID</th>
             <th>Username</th>
             <th>Email</th>
             <th>Password</th>
@@ -30,20 +33,21 @@
                 while (rs.next()) {
         %>
         <tr>
+        	<td><%= rs.getInt("id") %></td>
             <td><%= rs.getString("name") %></td>
             <td><%= rs.getString("email") %></td>
             <td><%= rs.getString("password") %></td>
             <td>
                 <!-- Edit Button -->
                 <form action="EditUserServlet" method="post">
-                    <input type="hidden" name="userId">
+                    <input type="hidden" name="userId" value="<%= rs.getInt("id") %>">
                     <input type="submit" value="Edit">
                 </form>
             </td>
             <td>
                 <!-- Delete Button -->
                 <form action="DeleteUserServlet" method="post">
-                    <input type="hidden" name="userId" >
+                    <input type="hidden" name="userId" value="<%= rs.getInt("id") %>">
                     <input type="submit" value="Delete">
                 </form>
             </td>
