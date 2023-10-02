@@ -59,4 +59,14 @@
     <servlet-name>updateCredentials</servlet-name>
     <url-pattern>/updateCredentials</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditUserServlet</display-name>
+    <servlet-name>EditUserServlet</servlet-name>
+    <servlet-class>EditUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditUserServlet</servlet-name>
+    <url-pattern>/EditUserServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
