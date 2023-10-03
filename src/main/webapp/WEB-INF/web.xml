@@ -89,4 +89,24 @@
     <servlet-name>AdmRegisterServlet</servlet-name>
     <url-pattern>/AdmRegisterServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DownloadServlet</display-name>
+    <servlet-name>DownloadServlet</servlet-name>
+    <servlet-class>DownloadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DownloadServlet</servlet-name>
+    <url-pattern>/DownloadServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdmUpdateCredentials</display-name>
+    <servlet-name>AdmUpdateCredentials</servlet-name>
+    <servlet-class>AdmUpdateCredentials</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdmUpdateCredentials</servlet-name>
+    <url-pattern>/AdmUpdateCredentials</url-pattern>
+  </servlet-mapping>
 </web-app>

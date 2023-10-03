@@ -16,6 +16,7 @@
             <th>Username</th>
             <th>Email</th>
             <th>Password</th>
+            <th>DownloadedVersion</th>
             <th>Edit</th>
             <th>Delete</th>
             <!-- Add more fields as needed -->
@@ -25,10 +26,15 @@
             Statement stmt = null;
             ResultSet rs = null;
             try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
+            	Class.forName("com.mysql.cj.jdbc.Driver");
                 conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/SiteTap?useTimezone=true&serverTimezone=UTC&useSSL=false", "root", "23340809Lhl@");
                 stmt = conn.createStatement();
-                String query = "SELECT * FROM login";
+                
+                // Modify the SQL query to perform a join between login and downloads tables
+                String query = "SELECT login.*, downloads.download_id " +
+                               "FROM login " +
+                               "LEFT JOIN downloads ON login.id = downloads.user_id";
+                
                 rs = stmt.executeQuery(query);
                 while (rs.next()) {
         %>
@@ -37,9 +43,10 @@
             <td><%= rs.getString("name") %></td>
             <td><%= rs.getString("email") %></td>
             <td><%= rs.getString("password") %></td>
+            <td><%= rs.getString("download_id") %></td>
             <td>
                 <!-- Edit Button -->
-                <form action="EditUserServlet" method="post">
+                <form action="AdmUpdateCredentials" method="post">
                     <input type="hidden" name="userId" value="<%= rs.getInt("id") %>">
                     <input type="submit" value="Edit">
                 </form>
