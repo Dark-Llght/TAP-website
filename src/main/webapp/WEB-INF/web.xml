@@ -79,4 +79,14 @@
     <servlet-name>DeleteUserServlet</servlet-name>
     <url-pattern>/DeleteUserServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdmRegisterServlet</display-name>
+    <servlet-name>AdmRegisterServlet</servlet-name>
+    <servlet-class>AdmRegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdmRegisterServlet</servlet-name>
+    <url-pattern>/AdmRegisterServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

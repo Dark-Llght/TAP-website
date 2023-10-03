@@ -14,7 +14,7 @@
     <div class="mainLogin">
         <div class="login">
             <h2>Register New User</h2>
-            <form action="RegisterServlet" method="post">
+            <form action="AdmRegisterServlet" method="post">
 			  <label for="name">Name:</label>
               <input type="text" id="name" name="name" required>
               <label for="email">E-mail:</label>
